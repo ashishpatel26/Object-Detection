@@ -1,2 +1,4 @@
 # Object-Detection
-Real-time object detection using tensorflow
+Object recongition and localization using VGG19
+
+
