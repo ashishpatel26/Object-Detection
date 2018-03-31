@@ -6,12 +6,12 @@ img_width = 224
 
 # load data
 label_cnt, X, y = 0, [], []
-for folder in os.listdir("data/flower_photos"):
+for folder in os.listdir("data/dataset"):
 
     print('loading: {0}'.format(folder))
 
-    for filename in os.listdir("data/flower_photos/" + str(folder)):
-        img = cv2.imread("data/flower_photos/" + str(folder) + '/' + str(filename))
+    for filename in os.listdir("data/dataset/" + str(folder)):
+        img = cv2.imread("data/dataset/" + str(folder) + '/' + str(filename))
 
         # resize and append
         X.append(cv2.resize(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), (img_width, img_width)))
@@ -97,9 +97,9 @@ for layer in model.layers[:5]:
 
 # adding custom layers 
 model.add(Flatten())
-model.add(Dense(1024, activation="relu"))
+model.add(Dense(2048, activation="relu"))
 model.add(Dropout(0.5))
-model.add(Dense(1024, activation="relu"))
+model.add(Dense(2048, activation="relu"))
 model.add(Dense(label_cnt, activation="softmax"))
 
 # compiling the model
