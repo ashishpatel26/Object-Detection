@@ -1,1 +1,7 @@
+# images
 *.jpg
+*.PNG
+
+# model
+*.h5
+*.h5
